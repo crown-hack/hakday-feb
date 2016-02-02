@@ -41,13 +41,13 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('MainCtrl', function($scope, $http) {
-  $http.get('http://crownpinkapp.cfapps.io/api').then(function(resp) {
-    $scope.conditions = resp.data.n;
-  }, function(err) {
-    console.error('ERR', err);
-    // err.status will contain the status code
-  })
+.controller('PlaylistCtrl', function($scope, $http) {
+     console.log('response'),
+        $http.get('http://crownpinkapp.cfapps.io/api').then(
+        function(resp) {
+            $scope.conditions = resp.data.n;}, 
+        function(err) {
+            console.error('ERR', err);})
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -61,7 +61,4 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 },
       { title: 'CrownTour', id: 8 }
   ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });
