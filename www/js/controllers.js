@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
 
 .controller('MainCtrl', function($scope, $http) {
   $http.get('http://crownpinkapp.cfapps.io/api').then(function(resp) {
-    $scope.conditions = resp.data.conditions;
+    $scope.conditions = resp.data.n;
   }, function(err) {
     console.error('ERR', err);
     // err.status will contain the status code
